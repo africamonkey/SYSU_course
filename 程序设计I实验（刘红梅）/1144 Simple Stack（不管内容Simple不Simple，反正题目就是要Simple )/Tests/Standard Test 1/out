@@ -1,0 +1,21 @@
+push 1 into stack_1: success
+push 2 into stack_1: success
+push 3 into stack_1: success
+get the top from stack_1: success
+The top: 3
+push 3 into stack_2: success
+push 4 into stack_2: success
+get the top from stack_1: success
+The top: 2
+push 2 into stack_2: success
+push 3 into stack_2: success
+get the top from stack_1: success
+The top: 1
+push 1 into stack_2: success
+push 2 into stack_2: success
+get the top from stack_1: failed
+The top: None
+push 0 into stack_2: failed
+push 1 into stack_2: failed
+The num in stack_1:
+The num in stack_2: 2 1 3 2 4 3
