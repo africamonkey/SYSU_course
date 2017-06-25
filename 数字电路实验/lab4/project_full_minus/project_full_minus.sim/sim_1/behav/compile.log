@@ -1,0 +1,12 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module minus_3
+WARNING: [VRFC 10-1315] redeclaration of ansi port sum is not allowed [C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_3.v:30]
+WARNING: [VRFC 10-1315] redeclaration of ansi port cout is not allowed [C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_3.v:31]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module minus_2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module minus_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sim_1/new/minus_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module minus_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

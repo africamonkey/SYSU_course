@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2015.3 (64-bit)
+# SW Build 1368829 on Mon Sep 28 20:06:43 MDT 2015
+# IP Build 1367837 on Mon Sep 28 08:56:14 MDT 2015
+# Start of session at: Wed May 03 16:29:10 2017
+# Process ID: 8664
+# Current directory: C:/Users/marse/Documents/digit/project_7_1
+# Command line: wbtcv.exe -mode batch -source C:/Users/marse/Documents/digit/project_1/project_1.hw/webtalk/labtool_webtalk.tcl -notrace
+# Log file: C:/Users/marse/Documents/digit/project_7_1/webtalk.log
+# Journal file: C:/Users/marse/Documents/digit/project_7_1\webtalk.jou
+#-----------------------------------------------------------
+source C:/Users/marse/Documents/digit/project_1/project_1.hw/webtalk/labtool_webtalk.tcl -notrace

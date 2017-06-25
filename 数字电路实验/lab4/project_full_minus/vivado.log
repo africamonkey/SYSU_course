@@ -1,0 +1,221 @@
+#-----------------------------------------------------------
+# Vivado v2015.3 (64-bit)
+# SW Build 1368829 on Mon Sep 28 20:06:43 MDT 2015
+# IP Build 1367837 on Mon Sep 28 08:56:14 MDT 2015
+# Start of session at: Mon Apr 10 19:26:14 2017
+# Process ID: 4512
+# Current directory: C:/Users/marse/Documents/digit/project_full_minus
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6016 C:\Users\marse\Documents\digit\project_full_minus\project_full_minus.xpr
+# Log file: C:/Users/marse/Documents/digit/project_full_minus/vivado.log
+# Journal file: C:/Users/marse/Documents/digit/project_full_minus\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.3/data/ip'.
+open_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 789.988 ; gain = 134.914
+close [ open C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_2.v w ]
+add_files C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_2.v
+update_compile_order -fileset sources_1
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'minus_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.sim/sim_1/behav'
+"xvlog -m64 --relax -prj minus_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module minus_2
+INFO: [VRFC 10-2458] undeclared symbol out, assumed default net type wire [C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_2.v:37]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module minus_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sim_1/new/minus_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module minus_tb
+ERROR: [VRFC 10-46] uut is already declared [C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sim_1/new/minus_tb.v:33]
+ERROR: [VRFC 10-1040] module minus_tb ignored due to previous errors [C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sim_1/new/minus_tb.v:22]
+ERROR: [USF-XSim-62] 'compile' step failed with error(s) while executing 'C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.sim/sim_1/behav/compile.bat' script. Please check that the file has the correct 'read/write/execute' permissions and the Tcl console output for any other possible errors or warnings.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'minus_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.sim/sim_1/behav'
+"xvlog -m64 --relax -prj minus_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module minus_2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module minus_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sim_1/new/minus_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module minus_tb
+ERROR: [VRFC 10-46] uut is already declared [C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sim_1/new/minus_tb.v:33]
+ERROR: [VRFC 10-1040] module minus_tb ignored due to previous errors [C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sim_1/new/minus_tb.v:22]
+ERROR: [USF-XSim-62] 'compile' step failed with error(s) while executing 'C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.sim/sim_1/behav/compile.bat' script. Please check that the file has the correct 'read/write/execute' permissions and the Tcl console output for any other possible errors or warnings.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'minus_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.sim/sim_1/behav'
+"xvlog -m64 --relax -prj minus_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module minus_2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module minus_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sim_1/new/minus_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module minus_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.sim/sim_1/behav'
+Vivado Simulator 2015.3
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.3/bin/unwrapped/win64.o/xelab.exe -wto f375270078a54006b28106593d2c34ad --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot minus_tb_behav xil_defaultlib.minus_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.minus_1
+Compiling module xil_defaultlib.minus_2
+Compiling module xil_defaultlib.minus_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot minus_tb_behav
+
+****** Webtalk v2015.3 (64-bit)
+  **** SW Build 1368829 on Mon Sep 28 20:06:43 MDT 2015
+  **** IP Build 1367837 on Mon Sep 28 08:56:14 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.sim/sim_1/behav/xsim.dir/minus_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Mon Apr 10 19:34:19 2017...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "minus_tb_behav -key {Behavioral:sim_1:Functional:minus_tb} -tclbatch {minus_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.3
+Time resolution is 1 ps
+source minus_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'minus_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 802.766 ; gain = 3.348
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close [ open C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_3.v w ]
+add_files C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_3.v
+update_compile_order -fileset sources_1
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'minus_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.sim/sim_1/behav'
+"xvlog -m64 --relax -prj minus_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module minus_3
+ERROR: [VRFC 10-1412] syntax error near = [C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_3.v:30]
+ERROR: [VRFC 10-51] sum is an unknown type [C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_3.v:30]
+ERROR: [VRFC 10-51] cout is an unknown type [C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_3.v:31]
+ERROR: [VRFC 10-1040] module minus_3 ignored due to previous errors [C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_3.v:23]
+ERROR: [USF-XSim-62] 'compile' step failed with error(s) while executing 'C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.sim/sim_1/behav/compile.bat' script. Please check that the file has the correct 'read/write/execute' permissions and the Tcl console output for any other possible errors or warnings.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'minus_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.sim/sim_1/behav'
+"xvlog -m64 --relax -prj minus_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module minus_3
+ERROR: [VRFC 10-1280] procedural assignment to a non-register sum is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_3.v:31]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register sum is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_3.v:31]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register cout is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_3.v:32]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register cout is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_3.v:32]
+ERROR: [VRFC 10-1040] module minus_3 ignored due to previous errors [C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_3.v:23]
+ERROR: [USF-XSim-62] 'compile' step failed with error(s) while executing 'C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.sim/sim_1/behav/compile.bat' script. Please check that the file has the correct 'read/write/execute' permissions and the Tcl console output for any other possible errors or warnings.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'minus_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.sim/sim_1/behav'
+"xvlog -m64 --relax -prj minus_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module minus_3
+WARNING: [VRFC 10-1315] redeclaration of ansi port sum is not allowed [C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_3.v:30]
+WARNING: [VRFC 10-1315] redeclaration of ansi port cout is not allowed [C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_3.v:31]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module minus_2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sources_1/new/minus_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module minus_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.srcs/sim_1/new/minus_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module minus_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.sim/sim_1/behav'
+Vivado Simulator 2015.3
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.3/bin/unwrapped/win64.o/xelab.exe -wto f375270078a54006b28106593d2c34ad --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot minus_tb_behav xil_defaultlib.minus_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.minus_1
+Compiling module xil_defaultlib.minus_2
+Compiling module xil_defaultlib.minus_3
+Compiling module xil_defaultlib.minus_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot minus_tb_behav
+
+****** Webtalk v2015.3 (64-bit)
+  **** SW Build 1368829 on Mon Sep 28 20:06:43 MDT 2015
+  **** IP Build 1367837 on Mon Sep 28 08:56:14 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.sim/sim_1/behav/xsim.dir/minus_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Mon Apr 10 19:40:16 2017...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/marse/Documents/digit/project_full_minus/project_full_minus.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "minus_tb_behav -key {Behavioral:sim_1:Functional:minus_tb} -tclbatch {minus_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.3
+Time resolution is 1 ps
+source minus_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'minus_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 10 19:42:21 2017...

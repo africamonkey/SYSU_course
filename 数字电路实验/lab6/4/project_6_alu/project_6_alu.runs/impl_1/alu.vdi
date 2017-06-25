@@ -1,0 +1,60 @@
+#-----------------------------------------------------------
+# Vivado v2015.3 (64-bit)
+# SW Build 1368829 on Mon Sep 28 20:06:43 MDT 2015
+# IP Build 1367837 on Mon Sep 28 08:56:14 MDT 2015
+# Start of session at: Mon Apr 24 00:15:37 2017
+# Process ID: 3028
+# Current directory: C:/Users/marse/Documents/digit/project_6_alu/project_6_alu.runs/impl_1
+# Command line: vivado.exe -log alu.vdi -applog -messageDb vivado.pb -mode batch -source alu.tcl -notrace
+# Log file: C:/Users/marse/Documents/digit/project_6_alu/project_6_alu.runs/impl_1/alu.vdi
+# Journal file: C:/Users/marse/Documents/digit/project_6_alu/project_6_alu.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source alu.tcl -notrace
+Command: open_checkpoint alu_routed.dcp
+INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2015.3
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/marse/Documents/digit/project_6_alu/project_6_alu.runs/impl_1/.Xil/Vivado-3028-/dcp/alu.xdc]
+Finished Parsing XDC File [C:/Users/marse/Documents/digit/project_6_alu/project_6_alu.runs/impl_1/.Xil/Vivado-3028-/dcp/alu.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 446.391 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 446.391 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2015.3 (64-bit) build 1368829
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command write_bitstream
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC 23-20] Rule violation (CFGBVS-1) Missing CFGBVS and CONFIG_VOLTAGE Design Properties - Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_design.  Configuration bank voltage select (CFGBVS) must be set to VCCO or GND, and CONFIG_VOLTAGE must be set to the correct configuration voltage, in order to determine the I/O voltage support for the pins in bank 0.  It is suggested to specify these either using the 'Edit Device Properties' function in the GUI or directly in the XDC file using the following syntax:
+
+ set_property CFGBVS value1 [current_design]
+ #where value1 is either VCCO or GND
+
+ set_property CONFIG_VOLTAGE value2 [current_design]
+ #where value2 is the voltage provided to configuration bank 0
+
+Refer to the device configuration user guide for more information.
+WARNING: [DRC 23-20] Rule violation (PDRC-153) Gated clock check - Net out1_reg_i_2_n_0 is a gated clock net sourced by a combinational pin out1_reg_i_2/O, cell out1_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC 23-20] Rule violation (PDRC-153) Gated clock check - Net out2_reg_i_2_n_0 is a gated clock net sourced by a combinational pin out2_reg_i_2/O, cell out2_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 3 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./alu.bit...
+Writing bitstream ./alu.bin...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Common 17-83] Releasing license: Implementation
+write_bitstream: Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 782.281 ; gain = 335.891
+INFO: [Vivado_Tcl 4-395] Unable to parse hwdef file alu.hwdef
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 24 00:15:59 2017...

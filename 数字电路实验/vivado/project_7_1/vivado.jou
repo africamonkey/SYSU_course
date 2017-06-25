@@ -1,0 +1,159 @@
+#-----------------------------------------------------------
+# Vivado v2015.3 (64-bit)
+# SW Build 1368829 on Mon Sep 28 20:06:43 MDT 2015
+# IP Build 1367837 on Mon Sep 28 08:56:14 MDT 2015
+# Start of session at: Wed May 03 16:13:19 2017
+# Process ID: 1104
+# Current directory: C:/Users/marse/Documents/digit/project_7_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5924 C:\Users\marse\Documents\digit\project_7_1\project_7_1.xpr
+# Log file: C:/Users/marse/Documents/digit/project_7_1/vivado.log
+# Journal file: C:/Users/marse/Documents/digit/project_7_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/marse/Documents/digit/project_7_1/project_7_1.xpr
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+launch_simulation
+source sevenseg.tcl
+close_sim
+close [ open C:/Users/marse/Documents/digit/project_7_1/project_7_1.srcs/sources_1/new/clkdiv.v w ]
+add_files C:/Users/marse/Documents/digit/project_7_1/project_7_1.srcs/sources_1/new/clkdiv.v
+update_compile_order -fileset sources_1
+close [ open C:/Users/marse/Documents/digit/project_7_1/project_7_1.srcs/sources_1/new/display_top.v w ]
+add_files C:/Users/marse/Documents/digit/project_7_1/project_7_1.srcs/sources_1/new/display_top.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+create_project project_1 C:/Users/marse/Documents/digit/project_1 -part xc7k70tfbg484-2
+set_property target_language VHDL [current_project]
+instantiate_example_design -template xilinx.com:design:bft:1.0  
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+close_project
+launch_simulation
+launch_simulation
+source display_top.tcl
+close_sim
+launch_simulation
+source display_top.tcl
+close_sim
+launch_simulation
+source display_top.tcl
+reset_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+close_sim
+remove_files C:/Users/marse/Documents/digit/project_7_1/project_7_1.srcs/sources_1/new/clkdiv.v
+remove_files C:/Users/marse/Documents/digit/project_7_1/project_7_1.srcs/sources_1/new/display_top.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+launch_simulation
+source sevenseg.tcl
+close_sim
+reset_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+reset_run impl_1
+launch_simulation
+source sevenseg.tcl
+reset_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+close_sim
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/marse/Documents/digit/project_7_1/project_7_1.runs/impl_1/sevenseg.bit} [lindex [get_hw_devices] 0]
+current_hw_device [lindex [get_hw_devices] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {C:/Users/marse/Documents/digit/project_7_1/project_7_1.runs/impl_1/sevenseg.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {C:/Users/marse/Documents/digit/project_7_1/project_7_1.runs/impl_1/sevenseg.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+launch_simulation
+source sevenseg.tcl
+reset_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+reset_run impl_1
+launch_runs impl_1
+wait_on_run impl_1
+close_sim
+launch_simulation
+source sevenseg.tcl
+reset_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+close_sim
+launch_simulation
+source sevenseg.tcl
+close_sim
+reset_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {C:/Users/marse/Documents/digit/project_7_1/project_7_1.runs/impl_1/sevenseg.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+close_hw
+reset_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/marse/Documents/digit/project_7_1/project_7_1.runs/impl_1/sevenseg.bit} [lindex [get_hw_devices] 0]
+current_hw_device [lindex [get_hw_devices] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {C:/Users/marse/Documents/digit/project_7_1/project_7_1.runs/impl_1/sevenseg.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {C:/Users/marse/Documents/digit/project_7_1/project_7_1.runs/impl_1/sevenseg.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+launch_simulation
+source sevenseg.tcl
+reset_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+close_sim
+reset_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+reset_run impl_1
+reset_run synth_1
