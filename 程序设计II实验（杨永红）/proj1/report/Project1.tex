@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage{CJK}
+\usepackage{xypic}
+\usepackage{amsfonts,amssymb}
+\usepackage{multirow}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{listings}
+\usepackage{lipsum}
+\usepackage{courier}
+
+
+\linespread{1.2}
+\geometry{left=3cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\lstset{basicstyle=\footnotesize\ttfamily,breaklines=true}
+\lstset{numbers=left,frame=shadowbox,tabsize=4}
+\begin{document}
+\begin{CJK}{UTF8}{song}
+\title{Project 1 技术报告}
+\author {姓名：王凯祺 学号：16337233 班级：教务3班}
+\maketitle
+
+\section{技术要求}
+实现一个图书馆管理系统（命令行程序），单一用户，支持以下操作：
+
+1. 增加一本书
+
+2. 删除一本书
+
+3. 借阅一本书
+
+4. 归还一本书
+
+5. 查询一本书
+
+6. 查询所有书籍
+
+\section{实现思路}
+
+本图书管理系统具有上述全部功能。其中，各功能的实现思路如下： \\
+定义一个类 book ，表示一本书。 \\
+增加一本书： 在 $std::vector<book>$ 中 push\_back 即可。 \\
+删除一本书： 先遍历 vector 找到那本书，然后在 $std::vector<book>$ 中 erase 即可。 \\
+借阅一本书： 先遍历 vector 找到那本书，然后标记被借阅。 \\
+归还一本书： 先遍历 vector 找到那本书，然后取消标记被借阅。 \\
+查询一本书： 遍历 vector 找到那本书，输出相关信息。 \\
+查询所有书籍： 遍历 vector ，输出全部信息。
+
+\section{对象设计}
+
+\begin{lstlisting}[language=C++]
+class book {
+	public:
+	book() {}
+	book(int _borrowed);   //argument _borrowed represents whether the book is borrowed
+	void borrow();         //mark the book as borrowed
+	void return_();        //mark the book as returned
+	std::string getname(); //get the name of the book
+	bool getborrowed();    //get the borrowed mark of the book
+	private:
+	std::string name;
+	bool borrowed;
+};
+\end{lstlisting}
+
+\begin{lstlisting}[language=C++]
+class lib {
+	public:
+	int print(std::string operation_type, int all = 0); //print the information of the book.
+	//add a book and return success.
+	void add(); //add a book
+	void del(); //delete a book
+	void borrow(); //borrow a book
+	void return_(); //return a book
+	void query(); //query a book.
+	void query_all(); //query all books.
+	private:
+	std::vector<book> books;
+};
+\end{lstlisting}
+
+\section{输入与输出}
+
+按照提示输入输出。\\
+在书名的输入中，允许出现的字符集为ASCII 32-127。
+
+\end{CJK}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
