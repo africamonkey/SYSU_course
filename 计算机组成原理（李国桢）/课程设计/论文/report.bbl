@@ -1,0 +1,20 @@
+\begin{thebibliography}{1}
+
+\bibitem{ARM}
+SHI Jing, WANG Yi-huai, SU~Yong, and SHEN Chen.
+\newblock Analysis of mqx interrupt mechanism and design of interrupt program
+  frame based on arm cortex-m4.
+\newblock {\em Computer Science}, 40:43, 2013.
+
+\bibitem{COD}
+David~A. Patterson and John~L. Hennessy.
+\newblock {\em Computer Organization and Design: The Hardware/Software
+  Interface (Fifth Edition)}.
+\newblock Elsevier (Singapore) Pte Ltd., 2014.
+
+\bibitem{COD2}
+张钧良.
+\newblock {\em 高校教材 \ 计算机组成原理}.
+\newblock 清华大学出版社 \ 北方交通大学出版社, 2003.
+
+\end{thebibliography}

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1510671200">
+  <File Type="OPT-DCP" Name="main_opt.dcp"/>
+  <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/impl_1/constrs_in.xml"/>
+  <File Type="RUN-SRCS" Name="$PDATADIR/runs/impl_1/sources.xml"/>
+  <File Type="ROUTE-DCP" Name="main_routed.dcp"/>
+  <File Type="PA-TCL" Name="main.tcl"/>
+  <File Type="RUN-STRAT" Name="$PDATADIR/runs/impl_1/impl_1.psg"/>
+  <File Type="OPT-DRC" Name="main_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="main_timing_summary_init.rpt"/>
+  <File Type="OPT-TIMING" Name="main_timing_summary_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="main.hwdef"/>
+  <File Type="PWROPT-DCP" Name="main_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="main_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="main_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="main_placed.dcp"/>
+  <File Type="PLACE-IO" Name="main_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="main_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="main_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="main_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="main_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="main_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="main_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="main_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="main_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="main_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="main_physopt.dcp"/>
+  <File Type="RDI-RDI" Name="main.vdi"/>
+  <File Type="PHYSOPT-DRC" Name="main_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="main_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-DRC" Name="main_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="main_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="main_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="main_power_summary_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="main_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="main_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="main_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="main_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="main_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="main_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="main_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="main_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="main_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="main_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="main_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BG-BIT" Name="main.bit"/>
+  <File Type="BG-BIN" Name="main.bin"/>
+  <File Type="BITSTR-MSK" Name="main.msk"/>
+  <File Type="BITSTR-RBT" Name="main.rbt"/>
+  <File Type="BITSTR-NKY" Name="main.nky"/>
+  <File Type="BITSTR-BMM" Name="main_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="main.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="main.sysdef"/>
+  <File Type="BG-BGN" Name="main.bgn"/>
+  <File Type="BG-DRC" Name="main.drc"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/clockdiv.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../single_cpu_prepare/single_cpu_prepare.srcs/sources_1/new/clockdiv.v"/>
+        <Attr Name="ImportTime" Val="1509354049"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ControlUnit.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../single_cpu/single_cpu.srcs/sources_1/new/ControlUnit.v"/>
+        <Attr Name="ImportTime" Val="1510657726"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ALU32.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../single_cpu_prepare/single_cpu_prepare.srcs/sources_1/new/ALU32.v"/>
+        <Attr Name="ImportTime" Val="1509587813"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/sevenseg.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../single_cpu_prepare/single_cpu_prepare.srcs/sources_1/new/sevenseg.v"/>
+        <Attr Name="ImportTime" Val="1509351789"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ROM.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../single_cpu/single_cpu.srcs/sources_1/new/ROM.v"/>
+        <Attr Name="ImportTime" Val="1510499520"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/RegFile.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../single_cpu_prepare/single_cpu_prepare.srcs/sources_1/new/RegFile.v"/>
+        <Attr Name="ImportTime" Val="1509587983"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/RAM.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../single_cpu_prepare/single_cpu_prepare.srcs/sources_1/new/RAM.v"/>
+        <Attr Name="ImportTime" Val="1509588089"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/PCSelector.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../single_cpu/single_cpu.srcs/sources_1/new/PCSelector.v"/>
+        <Attr Name="ImportTime" Val="1510657993"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/PC.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../single_cpu/single_cpu.srcs/sources_1/new/PC.v"/>
+        <Attr Name="ImportTime" Val="1510536704"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/DataSelector5.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../single_cpu/single_cpu.srcs/sources_1/new/DataSelector5.v"/>
+        <Attr Name="ImportTime" Val="1510500089"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/DataSelector32.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../single_cpu/single_cpu.srcs/sources_1/new/DataSelector32.v"/>
+        <Attr Name="ImportTime" Val="1510499990"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/BitExtend.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../single_cpu/single_cpu.srcs/sources_1/new/BitExtend.v"/>
+        <Attr Name="ImportTime" Val="1510661480"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/buttonRevise.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../single_cpu_prepare/single_cpu_prepare.srcs/sources_1/new/buttonRevise.v"/>
+        <Attr Name="ImportTime" Val="1509354832"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/main.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../single_cpu_prepare/single_cpu_prepare.srcs/sources_1/new/main.v"/>
+        <Attr Name="ImportTime" Val="1509355348"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="main"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/single_cpu.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../single_cpu/single_cpu.srcs/constrs_1/new/single_cpu.xdc"/>
+        <Attr Name="ImportTime" Val="1510669206"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2015"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream">
+      <Option Id="BinFile">1</Option>
+    </Step>
+  </Strategy>
+</GenRun>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="main_sim_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="main_sim" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="2980000000001fs"></ZoomEndTime>
+      <Cursor1Time time="675000000000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="14" />
+   <wvobject db_ref_id="1" fp_name="/main_sim/clock" type="logic">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/main_sim/SW_in" type="array">
+      <obj_property name="ElementShortName">SW_in[1:0]</obj_property>
+      <obj_property name="ObjectShortName">SW_in[1:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/main_sim/SW_reset" type="logic">
+      <obj_property name="ElementShortName">SW_reset</obj_property>
+      <obj_property name="ObjectShortName">SW_reset</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/main_sim/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/main_sim/uut/PCOut" type="array">
+      <obj_property name="ElementShortName">PCOut[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PCOut[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/main_sim/uut/PCIn" type="array">
+      <obj_property name="ElementShortName">PCIn[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PCIn[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/main_sim/uut/result" type="array">
+      <obj_property name="ElementShortName">result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">result[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/main_sim/uut/ReadReg1" type="array">
+      <obj_property name="ElementShortName">ReadReg1[4:0]</obj_property>
+      <obj_property name="ObjectShortName">ReadReg1[4:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/main_sim/uut/ReadReg2" type="array">
+      <obj_property name="ElementShortName">ReadReg2[4:0]</obj_property>
+      <obj_property name="ObjectShortName">ReadReg2[4:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/main_sim/uut/ReadData1" type="array">
+      <obj_property name="ElementShortName">ReadData1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ReadData1[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/main_sim/uut/ReadData2" type="array">
+      <obj_property name="ElementShortName">ReadData2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ReadData2[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/main_sim/uut/RegWre" type="logic">
+      <obj_property name="ElementShortName">RegWre</obj_property>
+      <obj_property name="ObjectShortName">RegWre</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/main_sim/uut/WriteReg" type="array">
+      <obj_property name="ElementShortName">WriteReg[4:0]</obj_property>
+      <obj_property name="ObjectShortName">WriteReg[4:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/main_sim/uut/WriteData" type="array">
+      <obj_property name="ElementShortName">WriteData[31:0]</obj_property>
+      <obj_property name="ObjectShortName">WriteData[31:0]</obj_property>
+   </wvobject>
+</wave_config>

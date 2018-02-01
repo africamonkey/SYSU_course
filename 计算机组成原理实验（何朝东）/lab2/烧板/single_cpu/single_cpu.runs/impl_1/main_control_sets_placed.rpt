@@ -1,0 +1,160 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.3 (win64) Build 1368829 Mon Sep 28 20:06:43 MDT 2015
+| Date         : Tue Nov 14 23:29:41 2017
+| Host         : africamonkey-yoga running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file main_control_sets_placed.rpt
+| Design       : main
+| Device       : xc7a35t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++-------------------------------------------------------------------+-------+
+|                               Status                              | Count |
++-------------------------------------------------------------------+-------+
+| Number of unique control sets                                     |   107 |
+| Minimum Number of register sites lost to control set restrictions |    74 |
++-------------------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              76 |           24 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              58 |           20 |
+| Yes          | No                    | No                     |             488 |          314 |
+| Yes          | No                    | Yes                    |             992 |          465 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++---------------------------------------+---------------------------------+--------------------------------------------+------------------+----------------+
+|              Clock Signal             |          Enable Signal          |              Set/Reset Signal              | Slice Load Count | Bel Load Count |
++---------------------------------------+---------------------------------+--------------------------------------------+------------------+----------------+
+|  ROM/regFile_reg[31][15]_1[2]         |                                 | ROM/AR[2]                                  |                1 |              1 |
+|  ROM/regFile_reg[31][5]_1             |                                 | ROM/AR[2]                                  |                1 |              1 |
+|  ROM/regFile_reg[31][15]_1[0]         |                                 | ROM/AR[0]                                  |                1 |              1 |
+|  ROM/regFile_reg[31][15]_1[1]         |                                 | ROM/AR[1]                                  |                1 |              1 |
+|  ROM/regFile_reg[31][15]_3            |                                 | ROM/regFile_reg[31][15]_0                  |                1 |              2 |
+|  ROM/PCOut_reg[7]_0[0]                |                                 |                                            |                1 |              2 |
+|  ROM/regFile_reg[1][0]                |                                 | ROM/ram_reg[3][0]                          |                1 |              2 |
+|  light/_clockdiv/CLK                  |                                 |                                            |                1 |              2 |
+|  ROM/regFile_reg[31][31]_2            |                                 | ROM/regFile_reg[31][31]_1                  |                1 |              3 |
+|  clk_BUFG                             |                                 | RegFile/reset_rd                           |                3 |              7 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[3][0]_0[0]  |                                            |                5 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[39][0]_0[0] |                                            |                4 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[38][0]_0[0] |                                            |                5 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[37][0]_0[0] |                                            |                6 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[46][0]_0[0] |                                            |                5 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[36][0]_0[0] |                                            |                7 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[35][0]_0[0] |                                            |                7 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[34][0]_0[0] |                                            |                4 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[33][0]_0[0] |                                            |                5 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[32][0]_0[0] |                                            |                4 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[31][0]_0[0] |                                            |                6 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[30][0]_0[0] |                                            |                5 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[2][0]_4[0]  |                                            |                6 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[29][0]_0[0] |                                            |                6 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[28][0]_0[0] |                                            |                2 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[27][0]_0[0] |                                            |                5 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[26][0]_0[0] |                                            |                7 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[25][0]_0[0] |                                            |                6 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[24][0]_0[0] |                                            |                6 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[23][0]_0[0] |                                            |                7 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[22][0]_0[0] |                                            |                5 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[21][0]_0[0] |                                            |                4 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[1][0]_0[0]  |                                            |                6 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[19][0]_0[0] |                                            |                8 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[18][0]_0[0] |                                            |                7 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[17][0]_0[0] |                                            |                7 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[16][0]_0[0] |                                            |                5 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[14][0]_0[0] |                                            |                6 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[13][0]_0[0] |                                            |                7 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[12][0]_0[0] |                                            |                6 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[58][0]_0[0] |                                            |                5 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[15][0]_0[0] |                                            |                5 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[11][0]_0[0] |                                            |                6 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[10][0]_0[0] |                                            |                6 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[0][0]_0[0]  |                                            |                6 |              8 |
+| ~clk_BUFG                             | ControlUnit/E[0]                |                                            |                2 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[9][0]_1[0]  |                                            |                4 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[8][0]_0[0]  |                                            |                7 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[7][0]_0[0]  |                                            |                2 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[6][0]_0[0]  |                                            |                5 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[60][0][0]   |                                            |                3 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[5][0]_4[0]  |                                            |                5 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[59][0]_0[0] |                                            |                3 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[20][0]_0[0] |                                            |                4 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[57][0]_0[0] |                                            |                5 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[56][0][0]   |                                            |                2 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[55][0]_0[0] |                                            |                5 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[54][0]_0[0] |                                            |                5 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[53][0]_0[0] |                                            |                4 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[52][0]_0[0] |                                            |                5 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[51][0]_0[0] |                                            |                5 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[50][0]_0[0] |                                            |                5 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[4][0]_0[0]  |                                            |                4 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[49][0]_0[0] |                                            |                6 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[48][0]_0[0] |                                            |                6 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[47][0]_0[0] |                                            |                6 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[44][0]_0[0] |                                            |                1 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[43][0]_0[0] |                                            |                5 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[42][0]_0[0] |                                            |                7 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[41][0]_0[0] |                                            |                5 |              8 |
+| ~clk_BUFG                             | ControlUnit/ram_reg[40][0]_0[0] |                                            |                6 |              8 |
+|  CLK_IBUF_BUFG                        |                                 |                                            |                4 |             13 |
+|  buttonRevise/_clockdiv/buttonOut_reg |                                 |                                            |                5 |             20 |
+|  CLK_IBUF_BUFG                        |                                 | buttonRevise/_clockdiv/count[0]_i_1__0_n_0 |                5 |             20 |
+|  CLK_IBUF_BUFG                        |                                 | light/_clockdiv/clear                      |                5 |             20 |
+| ~clk_BUFG                             | ROM/E[0]                        | RegFile/reset_rd                           |               13 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[10][31][0]      | RegFile/reset_rd                           |               14 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[13][31][0]      | RegFile/reset_rd                           |               15 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[19][31][0]      | RegFile/reset_rd                           |               15 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[21][31][0]      | RegFile/reset_rd                           |               10 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[18][31][0]      | RegFile/reset_rd                           |               11 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[2][31][0]       | RegFile/reset_rd                           |               15 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[28][31][0]      | RegFile/reset_rd                           |                9 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[15][31][0]      | RegFile/reset_rd                           |               14 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[5][31][0]       | RegFile/reset_rd                           |               17 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[14][31][0]      | RegFile/reset_rd                           |               10 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[24][31][0]      | RegFile/reset_rd                           |               11 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[12][31][0]      | RegFile/reset_rd                           |               13 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[4][31][0]       | RegFile/reset_rd                           |               19 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[7][31][0]       | RegFile/reset_rd                           |               20 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[29][31][0]      | RegFile/reset_rd                           |               17 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[3][31][0]       | RegFile/reset_rd                           |               13 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[6][31][0]       | RegFile/reset_rd                           |               21 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[31][31]_0[0]    | RegFile/reset_rd                           |               25 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[11][31][0]      | RegFile/reset_rd                           |               11 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[22][31][0]      | RegFile/reset_rd                           |               10 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[20][31][0]      | RegFile/reset_rd                           |               11 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[16][31][0]      | RegFile/reset_rd                           |               11 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[17][31][0]      | RegFile/reset_rd                           |                9 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[27][31][0]      | RegFile/reset_rd                           |               16 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[9][31][0]       | RegFile/reset_rd                           |               28 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[25][31][0]      | RegFile/reset_rd                           |               16 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[23][31][0]      | RegFile/reset_rd                           |               19 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[26][31][0]      | RegFile/reset_rd                           |               10 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[8][31][0]       | RegFile/reset_rd                           |               23 |             32 |
+| ~clk_BUFG                             | ROM/regFile_reg[30][31][0]      | RegFile/reset_rd                           |               19 |             32 |
+|  SW_reset_IBUF_BUFG                   |                                 |                                            |               13 |             39 |
++---------------------------------------+---------------------------------+--------------------------------------------+------------------+----------------+
+
+

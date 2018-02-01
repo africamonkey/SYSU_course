@@ -1,0 +1,575 @@
+#-----------------------------------------------------------
+# Vivado v2015.3 (64-bit)
+# SW Build 1368829 on Mon Sep 28 20:06:43 MDT 2015
+# IP Build 1367837 on Mon Sep 28 08:56:14 MDT 2015
+# Start of session at: Tue Nov 14 22:53:20 2017
+# Process ID: 8924
+# Current directory: C:/Users/marse/Documents/digit/single_cpu/single_cpu.runs/synth_1
+# Command line: vivado.exe -log main.vds -mode batch -messageDb vivado.pb -notrace -source main.tcl
+# Log file: C:/Users/marse/Documents/digit/single_cpu/single_cpu.runs/synth_1/main.vds
+# Journal file: C:/Users/marse/Documents/digit/single_cpu/single_cpu.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source main.tcl -notrace
+Command: synth_design -top main -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 285.969 ; gain = 114.465
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'main' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/main.v:3]
+INFO: [Synth 8-638] synthesizing module 'sevenseg' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/sevenseg.v:3]
+INFO: [Synth 8-638] synthesizing module 'clockdiv' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/clockdiv.v:3]
+	Parameter T bound to: 20000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'clockdiv' (1#1) [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/clockdiv.v:3]
+INFO: [Synth 8-226] default block is never used [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/sevenseg.v:25]
+INFO: [Synth 8-256] done synthesizing module 'sevenseg' (2#1) [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/sevenseg.v:3]
+INFO: [Synth 8-638] synthesizing module 'buttonRevise' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/buttonRevise.v:3]
+INFO: [Synth 8-256] done synthesizing module 'buttonRevise' (3#1) [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/buttonRevise.v:3]
+WARNING: [Synth 8-567] referenced signal 'PCOut' should be on the sensitivity list [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/main.v:62]
+WARNING: [Synth 8-567] referenced signal 'PCIn' should be on the sensitivity list [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/main.v:62]
+WARNING: [Synth 8-567] referenced signal 'ReadReg1' should be on the sensitivity list [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/main.v:62]
+WARNING: [Synth 8-567] referenced signal 'ReadData1' should be on the sensitivity list [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/main.v:62]
+WARNING: [Synth 8-567] referenced signal 'ReadReg2' should be on the sensitivity list [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/main.v:62]
+WARNING: [Synth 8-567] referenced signal 'ReadData2' should be on the sensitivity list [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/main.v:62]
+WARNING: [Synth 8-567] referenced signal 'result' should be on the sensitivity list [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/main.v:62]
+WARNING: [Synth 8-567] referenced signal 'WriteData' should be on the sensitivity list [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/main.v:62]
+INFO: [Synth 8-638] synthesizing module 'DataSelector5' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/DataSelector5.v:3]
+INFO: [Synth 8-256] done synthesizing module 'DataSelector5' (4#1) [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/DataSelector5.v:3]
+INFO: [Synth 8-638] synthesizing module 'DataSelector32' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/DataSelector32.v:3]
+INFO: [Synth 8-256] done synthesizing module 'DataSelector32' (5#1) [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/DataSelector32.v:3]
+INFO: [Synth 8-638] synthesizing module 'BitExtend' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/BitExtend.v:3]
+INFO: [Synth 8-256] done synthesizing module 'BitExtend' (6#1) [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/BitExtend.v:3]
+INFO: [Synth 8-638] synthesizing module 'PC' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/PC.v:3]
+INFO: [Synth 8-256] done synthesizing module 'PC' (7#1) [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/PC.v:3]
+INFO: [Synth 8-638] synthesizing module 'PCSelector' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/PCSelector.v:3]
+INFO: [Synth 8-256] done synthesizing module 'PCSelector' (8#1) [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/PCSelector.v:3]
+INFO: [Synth 8-638] synthesizing module 'ROM' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/ROM.v:3]
+INFO: [Synth 8-3876] $readmem data file 'C:/Users/marse/Documents/digit/single_cpu/rom_data.txt' is read successfully [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/ROM.v:11]
+INFO: [Synth 8-256] done synthesizing module 'ROM' (9#1) [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/ROM.v:3]
+INFO: [Synth 8-638] synthesizing module 'RegFile' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/RegFile.v:3]
+INFO: [Synth 8-256] done synthesizing module 'RegFile' (10#1) [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/RegFile.v:3]
+INFO: [Synth 8-638] synthesizing module 'RAM' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/RAM.v:3]
+WARNING: [Synth 8-4767] Trying to implement RAM 'ram_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
+	2: Unable to determine number of words or word size in RAM. 
+RAM "ram_reg" dissolved into registers
+INFO: [Synth 8-256] done synthesizing module 'RAM' (11#1) [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/RAM.v:3]
+INFO: [Synth 8-638] synthesizing module 'ALU32' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/ALU32.v:3]
+INFO: [Synth 8-256] done synthesizing module 'ALU32' (12#1) [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/ALU32.v:3]
+INFO: [Synth 8-638] synthesizing module 'ControlUnit' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/ControlUnit.v:3]
+INFO: [Synth 8-256] done synthesizing module 'ControlUnit' (13#1) [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/ControlUnit.v:3]
+INFO: [Synth 8-256] done synthesizing module 'main' (14#1) [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/main.v:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 329.918 ; gain = 158.414
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 329.918 ; gain = 158.414
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/constrs_1/new/single_cpu.xdc]
+WARNING: [Vivado 12-507] No nets matched 'SW_reset_IBUF'. [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/constrs_1/new/single_cpu.xdc:35]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/constrs_1/new/single_cpu.xdc:35]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/constrs_1/new/single_cpu.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/constrs_1/new/single_cpu.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/main_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/main_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 617.938 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 617.938 ; gain = 446.434
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 617.938 ; gain = 446.434
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 617.938 ; gain = 446.434
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3936] Found unconnected internal register 'dat_reg' and it is trimmed from '20' to '19' bits. [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/buttonRevise.v:17]
+INFO: [Synth 8-5546] ROM "regFile_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[24]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[25]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[26]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[27]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[28]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[29]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[30]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regFile_reg[31]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ALUSrcA" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ALUSrcB" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ALUSrcB" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RD" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "WR" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-327] inferring latch for variable 'dataOut_reg' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/ROM.v:15]
+WARNING: [Synth 8-327] inferring latch for variable 'ALUSrcA_reg' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/ControlUnit.v:20]
+WARNING: [Synth 8-327] inferring latch for variable 'ALUSrcB_reg' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/ControlUnit.v:21]
+WARNING: [Synth 8-327] inferring latch for variable 'PCSrc_reg' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/ControlUnit.v:22]
+WARNING: [Synth 8-327] inferring latch for variable 'ExtSel_reg' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/ControlUnit.v:23]
+WARNING: [Synth 8-327] inferring latch for variable 'RegWre_reg' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/ControlUnit.v:24]
+WARNING: [Synth 8-327] inferring latch for variable 'RegDst_reg' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/ControlUnit.v:25]
+WARNING: [Synth 8-327] inferring latch for variable 'ALUOp_reg' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/ControlUnit.v:26]
+WARNING: [Synth 8-327] inferring latch for variable 'RD_reg' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/ControlUnit.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'WR_reg' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/ControlUnit.v:28]
+WARNING: [Synth 8-327] inferring latch for variable 'DBDataSrc_reg' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/ControlUnit.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'x_reg' [C:/Users/marse/Documents/digit/single_cpu/single_cpu.srcs/sources_1/new/main.v:16]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 617.938 ; gain = 446.434
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 6     
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input     20 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 3     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               19 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   4 Input     32 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 183   
+	  16 Input      7 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 2     
+	  15 Input      3 Bit        Muxes := 1     
+	   9 Input      3 Bit        Muxes := 1     
+	  12 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   7 Input      3 Bit        Muxes := 1     
+	   9 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 49    
+	   5 Input      1 Bit        Muxes := 65    
+	   3 Input      1 Bit        Muxes := 3     
+	   7 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 1     
+	  16 Input      1 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+	  10 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module main 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     16 Bit        Muxes := 1     
+Module clockdiv 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     20 Bit       Adders := 1     
++---Registers : 
+	                1 Bit    Registers := 1     
+Module sevenseg 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
++---Muxes : 
+	  16 Input      7 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 2     
+Module buttonRevise 
+Detailed RTL Component Info : 
++---Registers : 
+	               19 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module DataSelector5 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+Module DataSelector32 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module PC 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module PCSelector 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+Module ROM 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 3     
+Module RegFile 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 31    
+Module RAM 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 3     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 183   
+	   5 Input      1 Bit        Muxes := 61    
+Module ALU32 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   3 Input     32 Bit       Adders := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module ControlUnit 
+Detailed RTL Component Info : 
++---Muxes : 
+	  15 Input      3 Bit        Muxes := 1     
+	   9 Input      3 Bit        Muxes := 1     
+	  12 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   7 Input      3 Bit        Muxes := 1     
+	   9 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 17    
+	   5 Input      1 Bit        Muxes := 4     
+	   3 Input      1 Bit        Muxes := 3     
+	   7 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 1     
+	  16 Input      1 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+	  10 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 617.938 ; gain = 446.434
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3917] design main has port dp driven by constant 1
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 617.938 ; gain = 446.434
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 617.938 ; gain = 446.434
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|ROM         | rom        | 128x8         | LUT            | 
+|ROM         | rom__1     | 128x8         | LUT            | 
+|ROM         | rom__2     | 128x8         | LUT            | 
+|ROM         | rom__3     | 128x8         | LUT            | 
+|main        | rom        | 128x8         | LUT            | 
+|main        | rom__4     | 128x8         | LUT            | 
+|main        | rom__5     | 128x8         | LUT            | 
+|main        | extrom     | 128x8         | Block RAM      | 
++------------+------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (\x_reg[15] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\x_reg[14] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\x_reg[13] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\x_reg[12] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\x_reg[11] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\x_reg[10] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\x_reg[9] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\x_reg[8] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\x_reg[7] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\x_reg[6] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\x_reg[5] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\x_reg[4] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\x_reg[3] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\x_reg[2] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\x_reg[1] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\x_reg[0] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[31] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[30] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[29] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[28] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[27] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[26] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[25] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[24] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[23] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[22] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[21] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[20] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[19] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[18] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[17] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[16] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[15] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[14] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[13] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[12] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[11] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[10] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[9] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[8] ) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (\PC/PCOut_reg[0] ) is unused and will be removed from module main.
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 617.938 ; gain = 446.434
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 617.938 ; gain = 446.434
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:02 ; elapsed = 00:01:05 . Memory (MB): peak = 625.293 ; gain = 453.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:09 ; elapsed = 00:01:11 . Memory (MB): peak = 629.172 ; gain = 457.668
+---------------------------------------------------------------------------------
+Finished Parallel Timing Optimization  : Time (s): cpu = 00:01:09 ; elapsed = 00:01:11 . Memory (MB): peak = 629.172 ; gain = 457.668
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:01:09 ; elapsed = 00:01:11 . Memory (MB): peak = 629.172 ; gain = 457.668
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance '\ROM/dataOut_reg[4] ' (LD) to '\ROM/dataOut_reg[9] '
+WARNING: [Synth 8-3332] Sequential element (\ROM/dataOut_reg[4] ) is unused and will be removed from module main.
+INFO: [Synth 8-4480] The timing for the instance \PC/PCOut_reg_rep  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:16 ; elapsed = 00:01:18 . Memory (MB): peak = 681.371 ; gain = 509.867
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:17 ; elapsed = 00:01:19 . Memory (MB): peak = 681.371 ; gain = 509.867
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:17 ; elapsed = 00:01:19 . Memory (MB): peak = 681.371 ; gain = 509.867
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:17 ; elapsed = 00:01:19 . Memory (MB): peak = 681.371 ; gain = 509.867
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:17 ; elapsed = 00:01:20 . Memory (MB): peak = 681.371 ; gain = 509.867
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:17 ; elapsed = 00:01:20 . Memory (MB): peak = 681.371 ; gain = 509.867
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:17 ; elapsed = 00:01:20 . Memory (MB): peak = 681.371 ; gain = 509.867
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     3|
+|2     |CARRY4   |    44|
+|3     |LUT1     |   106|
+|4     |LUT2     |    62|
+|5     |LUT3     |   560|
+|6     |LUT4     |    66|
+|7     |LUT5     |   814|
+|8     |LUT6     |  1561|
+|9     |MUXF7    |   386|
+|10    |MUXF8    |   143|
+|11    |RAMB18E1 |     1|
+|12    |FDCE     |   992|
+|13    |FDRE     |   570|
+|14    |LD       |    41|
+|15    |LDC      |     7|
+|16    |LDP      |     4|
+|17    |IBUF     |     5|
+|18    |OBUF     |    12|
++------+---------+------+
+
+Report Instance Areas: 
++------+---------------+-------------+------+
+|      |Instance       |Module       |Cells |
++------+---------------+-------------+------+
+|1     |top            |             |  5377|
+|2     |  ALU          |ALU32        |    39|
+|3     |  ControlUnit  |ControlUnit  |   526|
+|4     |  PC           |PC           |    80|
+|5     |  PCSelector   |PCSelector   |     9|
+|6     |  RAM          |RAM          |  1257|
+|7     |  ROM          |ROM          |   254|
+|8     |  RegFile      |RegFile      |  2998|
+|9     |  buttonRevise |buttonRevise |    98|
+|10    |    _clockdiv  |clockdiv_0   |    74|
+|11    |  light        |sevenseg     |    96|
+|12    |    _clockdiv  |clockdiv     |    74|
++------+---------------+-------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:17 ; elapsed = 00:01:20 . Memory (MB): peak = 681.371 ; gain = 509.867
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 56 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:07 ; elapsed = 00:01:13 . Memory (MB): peak = 681.371 ; gain = 181.527
+Synthesis Optimization Complete : Time (s): cpu = 00:01:17 ; elapsed = 00:01:20 . Memory (MB): peak = 681.371 ; gain = 509.867
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 102 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 2 inverter(s) to 1480 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 52 instances were transformed.
+  LD => LDCE: 41 instances
+  LDC => LDCE: 7 instances
+  LDP => LDPE: 4 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+80 Infos, 66 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:17 ; elapsed = 00:01:19 . Memory (MB): peak = 681.371 ; gain = 476.625
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 681.371 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 14 22:54:44 2017...
