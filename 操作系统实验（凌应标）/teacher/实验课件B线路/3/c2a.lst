@@ -1,0 +1,100 @@
+﻿
+_TEXT	segment	byte public 'CODE'
+DGROUP	group	_DATA,_BSS
+	assume	cs:_TEXT,ds:DGROUP,ss:DGROUP
+_TEXT	ends
+_DATA	segment word public 'DATA'
+d@	    label 	byte
+d@w	    label	word
+_DATA	ends
+_BSS	segment word public 'BSS'
+b@	    label   byte
+b@w	    label   word
+_BSS	ends
+_DATA	segment word public 'DATA'
+_str1	label	 byte
+	db	65
+	db	65
+	db	10
+	db	77 dup (0)
+	db	66
+	db	66
+	db	10
+	db	77 dup (0)
+_DATA	ends
+_TEXT	segment	byte public 'CODE'
+_main	proc	near
+    ;
+;***************************************
+    ;对局部变量str2，str3的分配工作开始
+	push	bp
+	mov	bp,sp
+	sub	sp,160  ;在BSS中分配两个字符串空间，
+;前面80个字符存放str2,
+;后面80个字符存放str3
+    push	ss
+	lea	ax,word ptr [bp-160]  ;str2的开始地址
+	push	ax
+	push	ds
+	mov	ax,offset DGROUP:d@+80;str3的开始地址
+	push	ax
+	mov	cx,80
+	push	cs
+	call	near ptr SCOPY@  
+ ;从DATA段中复制str2初始化的值
+	;对局部变量str2，str3的分配工作结束
+	;*********************************
+	;
+;	?debug	L 9
+	mov	ax,65
+	push	ax
+	call	near ptr _putch
+	pop	cx
+;	?debug	L 10
+	mov	ax,offset DGROUP:_str1  ;str1的地址压栈
+	push	ax
+	call	near ptr _myprint
+	pop	cx
+;	?debug	L 11
+	lea	ax,word ptr [bp-160]  ;str2的地址压栈
+	push	ax
+	call	near ptr _myprint
+	pop	cx
+;	?debug	L 12
+	lea	ax,word ptr [bp-80]   ;str3的地址压栈
+	push	ax
+	call	near ptr _myprint
+	pop	cx
+;	?debug	L 13
+	jmp	short @2
+@4:
+@2:
+	jmp	short @4
+@3:
+@1:
+;	?debug	L 14
+	mov	sp,bp
+	pop	bp
+	ret	
+_main	endp
+;	?debug	L 15
+_putch	proc	near
+	push	bp
+	mov	bp,sp
+	mov	al,byte ptr [bp+4]
+	inc	al
+	mov	byte ptr [bp+4],al
+@5:
+	pop	bp
+	ret	
+_putch	endp
+_myprint	proc	near
+	push	bp
+	mov	bp,sp
+	mov	bx,word ptr [bp+4]
+	mov	al,byte ptr [bx]
+	inc	al
+	mov	bx,word ptr [bp+4]
+	mov	byte ptr [bx],al
+@6:
+

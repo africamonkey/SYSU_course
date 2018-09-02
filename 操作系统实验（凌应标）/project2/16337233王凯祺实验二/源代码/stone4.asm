@@ -1,0 +1,122 @@
+; 程序源代码（stone.asm）
+; 本程序在文本方式显示器上从左边射出一个*号,以45度向右下运动，撞到边框后反射,如此类推.
+;  凌应标 2014/3
+;  王凯祺 2018/3
+;  NASM汇编格式
+	delay  equ 50000					; 计时器延迟计数,用于控制画框的速度
+	ddelay equ 580					; 计时器延迟计数,用于控制画框的速度
+	sx     equ 13
+	sy     equ 40
+	wx     equ 12
+	wy     equ 39
+	org 100h					; 程序加载到100h，可用于生成COM
+
+start:
+	mov ax,0B800h				; 文本窗口显存起始地址
+	mov gs,ax					; GS = B800h
+	mov ah, 1
+	int 16h
+loop1:
+	dec word[count]				; 递减计数变量
+	jnz loop1					; >0：跳转;
+	mov word[count],delay
+	dec word[dcount]				; 递减计数变量
+	jnz loop1
+	mov word[count],delay
+	mov word[dcount],ddelay
+	
+	mov ah, 1
+	int 16h
+	jz skip_end
+	mov ah, 0
+	int 16h
+	jmp end
+skip_end:
+	
+	xor dx, dx
+	mov word ax, [t]
+	xor bx, bx
+	mov word bx, wx
+	add bx, bx
+	sub bx, 2
+	div bx
+	cmp dx, wx
+	jb xok
+	sub bx, dx
+	mov dx, bx
+xok:
+	add dx, sx
+	mov word [x], dx
+	
+	xor dx, dx
+	mov word ax, [t]
+	xor bx, bx
+	mov word bx, wy
+	add bx, bx
+	sub bx, 2
+	div bx
+	cmp dx, wy
+	jb yok
+	sub bx, dx
+	mov dx, bx
+yok:
+	add dx, sy
+	mov word [y], dx
+	
+show:	
+	xor dx, dx
+	mov word ax, [t]
+	mov bx, 15
+	div bx
+	mov cx, dx
+	add cx, 1
+	xor ax,ax                 ; 计算显存地址
+	mov ax,word[x]
+	mov bx,80
+	mul bx
+	add ax,word[y]
+	mov bx,2
+	mul bx
+	mov bx,ax
+	mov ah,cl				;  0000：黑底、1111：亮白字（默认值为07h）
+	mov al,byte[char]			;  AL = 显示字符值（默认值为20h=空格符）
+	mov [gs:bx],ax  		;  显示字符的ASCII码值
+	inc word [t]
+	
+	mov ah, 13h
+	mov al, 1
+	mov bl, 0eh
+	mov bh, 0
+	mov dh, 10
+	mov dl, 30
+	mov bp, namemsg
+	mov cx, 18
+	int 10h
+	
+	mov ah, 13h
+	mov al, 1
+	mov bl, 0eh
+	mov bh, 0
+	mov dh, 11
+	mov dl, 27
+	mov bp, exitmsg
+	mov cx, 25
+	int 10h
+	
+	jmp loop1
+
+end:
+	mov ah, 4ch
+	int 21h
+	
+datadef:	
+	count dw delay
+	dcount dw ddelay
+	t    dw 0
+	x    dw 0
+	y    dw 0
+
+	char db 'A'
+	
+	namemsg db '16337233 WangKaiqi'
+	exitmsg db 'Press any key to exit ...'

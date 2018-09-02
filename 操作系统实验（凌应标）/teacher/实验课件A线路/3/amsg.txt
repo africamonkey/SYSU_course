@@ -1,0 +1,8 @@
+Turbo Assembler  Version 4.1  Copyright (c) 1988, 1996 Borland International
+
+Assembling file:   showstr.asm
+Error messages:    None
+Warning messages:  None
+Passes:            1
+Remaining memory:  419k
+

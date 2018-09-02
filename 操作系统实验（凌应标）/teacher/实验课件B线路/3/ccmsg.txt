@@ -1,0 +1,4 @@
+Turbo C  Version 2.01  Copyright (c) 1987, 1988 Borland International
+upper.c:
+
+        Available memory 406398
