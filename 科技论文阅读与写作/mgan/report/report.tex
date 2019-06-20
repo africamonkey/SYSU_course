@@ -1,0 +1,78 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{Multiple Generative Adversarial Nets}
+
+\author{\IEEEauthorblockN{1\textsuperscript{st} Kaiqi Wang \ 16337233}
+\IEEEauthorblockA{\textit{School of Data and Computer Sci.} \\
+Sun Yat-sen University, Guangzhou, 510275, China \\
+wangkq3@mail2.sysu.edu.cn}
+}
+
+%\author{\IEEEauthorblockN{1\textsuperscript{st} Chongxuan Li}
+%\IEEEauthorblockA{\textit{Dept. of Comp. Sci \& Tech.} \\
+%Tsinghua University, Beijing, 100084, China \\
+%licx14@mails.tsinghua.edu.cn}
+%\and
+%\IEEEauthorblockN{2\textsuperscript{nd} Kun Xu}
+%\IEEEauthorblockA{\textit{TNList Lab} \\
+%Tsinghua University, Beijing, 100084, China \\
+%xu-k16@mails.tsinghua.edu.cn}
+%\and
+%\IEEEauthorblockN{3\textsuperscript{rd} Jun Zhu}
+%\IEEEauthorblockA{\textit{State Key Lab of Intell. Tech. \& Sys.} \\
+%Tsinghua University, Beijing, 100084, China \\
+%dcszj@mail.tsinghua.edu.cn}
+%\and
+%\IEEEauthorblockN{4\textsuperscript{th} Bo Zhang}
+%\IEEEauthorblockA{\textit{Center for Bio-Inspired Computing Research} \\
+%Tsinghua University, Beijing, 100084, China \\
+%dcszb@mail.tsinghua.edu.cn}
+%}
+
+\maketitle
+
+\begin{abstract}
+Triple Generative Adversarial Nets (TGANs), which is based on Generative Adversarial Nets (GANs), have gained great success in image generation and semi-supervised learning (SSL). By adding a new role -- classifier, TGANs make the generator, the classifier and the discrimator simultaneously achieve the state-of-art results among deep generative models. \color{red} We guess that if we add more roles into GANs, there can be significant improvement on the quality of image generation and the accuracy of image identification. \color{black} To verify this guess, we present multiple generative adversarial net (MGAN), which consists of $n$ players -- a generator, a discriminator, a classifier $C_1$ , a classifier $C_2$ of classifier $C_1$, a classifier $C_3$ of classifier $C_2$, $\cdots$, a classifier $C_{n-2}$ of classifier $C_{n-3}$. The generator and the classifier characterize the conditional distributions between images and labels, and the discriminator solely focuses on identifying fake image-label pairs. Our results on various datasets demostrate that MGANs have higher quality of image generation and higher accuracy of image identification. 
+\end{abstract}
+
+\begin{IEEEkeywords}
+Generative Adversarial Nets, Artificial Intelligence, Deep Learning
+\end{IEEEkeywords}
+
+\section{Introduction}
+Recently, significant progress has been made on generating realistic images based on Generative Adversarial Nets (GANs). GAN is formulated as a two-player game, where the generator $G$ takes a random noise $z$ as input and produces sample $G(z)$ in the data space while the discriminator $D$ identifies whether a certain sample comes from the true data distribution $p(x)$ or the generator. Both $G$ and $D$ are parameterized as deep neural networks and the training procedure is to solve a minimax problem:
+
+$$
+\begin{aligned}
+\min_G\max_DU(D, G) = & E_{x \sim p(x)}[\log(D(x))] + \\
+& E_{z \sim p_z(z)} [ \log(1 - D(G(z)))] \\
+\end{aligned}
+$$
+
+We attempt to add more roles to the GANs. We introduce $n - 1$ conditional networks -- $n - 2$ classifiers and a generator to generate pseudo labels given real data and pseudo data given real labels, respectively. To justify the quality of the samples from the conditional networks, we define a single discriminator network which can distinguish whether a data-label pair is from the real labeled dataset or not. The resulting model is called Multi-GAN because it has $n$ roles and $n - 1$ conditional networks between them. 
+
+Overall, our main contribution is getting higher quality of image generation and higher accuracy of image identification. 
+
+%\begin{thebibliography}{00}
+%\bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
+%\bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
+%\bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
+%\bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
+%\bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
+%\bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
+%\bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
+%\end{thebibliography}
+
+\end{document}
