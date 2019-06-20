@@ -1,0 +1,316 @@
+% XeLaTeX
+
+\documentclass{article}
+\usepackage{ctex}
+\usepackage{xypic}
+\usepackage{amsfonts,amssymb}
+\usepackage{multirow}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{lipsum}
+\usepackage{courier}
+\usepackage{fancyvrb}
+\usepackage{etoolbox}
+
+
+\linespread{1.2}
+\geometry{left=3cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+
+\makeatletter
+\patchcmd{\FV@SetupFont}
+  {\FV@BaseLineStretch}
+  {\fontencoding{T1}\FV@BaseLineStretch}
+  {}{}
+\makeatother
+
+\lstset{basicstyle=\small\fontencoding{T1}\ttfamily,breaklines=true}
+\lstset{numbers=left,frame=shadowbox,tabsize=4}
+%\lstset{extendedchars=false}
+\begin{document}
+
+\title{数据库系统实验3 \ 实验报告}
+\author {数据科学与计算机学院 \ 计算机科学与技术 2016 级 \\ 王凯祺 \ 16337233}
+\maketitle
+
+\section{实验3.1 实体完整性实验}
+
+实体完整性，是指使用主键来唯一地标识一个实体。
+
+在关系数据库中，一条记录代表一个实体。而实体是可以相互区分、识别的，也即它们应具有某种唯一性标识（该标识不能取相同的值，也不能为空）。
+
+实体完整性强制表的标识符列或主键的完整性（通过索引、UNIQUE 约束、PRIMARY KEY 约束或 IDENTITY 属性）。
+
+\subsection{创建表时定义实体完整性（列级实体完整性）}
+
+定义供应商表的实体完整性。
+
+\begin{lstlisting}[language=sql]
+create table supplier (
+	suppkey int primary key,
+    name char(25),
+    address varchar(40),
+    nationkey int,
+    phone char(15),
+    acctbal real,
+    comment varchar(101)
+);
+\end{lstlisting}
+
+\subsection{创建表时定义实体完整性（表级实体完整性）}
+
+定义供应商表的实体完整性。
+
+\begin{lstlisting}[language=sql]
+create table supplier (
+	suppkey int,
+    name char(25),
+    address varchar(40),
+    nationkey int,
+    phone char(15),
+    acctbal real,
+    comment varchar(101),
+    primary key(suppkey)
+);
+\end{lstlisting}
+
+\subsection{创建表后定义实体完整性}
+
+定义供应商表。
+
+\begin{lstlisting}[language=sql]
+create table supplier (
+	suppkey int,
+    name char(25),
+    address varchar(40),
+    nationkey int,
+    phone char(15),
+    acctbal real,
+    comment varchar(101)
+);
+
+alter table supplier add primary key (suppkey);
+\end{lstlisting}
+
+\subsection{定义实体完整性（主码由多个属性组成）}
+
+\begin{lstlisting}[language=sql]
+create table supplier (
+	partkey int,
+	suppkey int,
+    name char(25),
+    address varchar(40),
+    nationkey int,
+    phone char(15),
+    acctbal real,
+    comment varchar(101),
+    primary key (partkey, suppkey)
+    # 主码由多个属性组成，实体完整性必须定义在表级
+);
+\end{lstlisting}
+
+\subsection{有多个候选码时定义实体完整性}
+
+定义国家表的实体完整性，其中 nationkey 和 name 都是候选码，选择 nationkey 作为主码， name 上定义唯一性约束。
+
+\begin{lstlisting}[language=sql]
+create table nation (
+	nationkey int primary key,
+    name char(25) unique,
+    regionkey int,
+    comment varchar(152)
+);
+\end{lstlisting}
+
+\subsection{删除实体完整性}
+
+指定一张表，让它删主键就好了（因为主键是唯一的）。
+
+\begin{lstlisting}[language=sql]
+alter table nation drop primary key;
+\end{lstlisting}
+
+\subsection{增加两条相同的记录，验证实体完整性是否起作用}
+
+插入两条主码相同的记录就会违反实体完整性约束。
+
+\begin{lstlisting}[language=sql]
+insert into supplier values (11,'test1','test1',101,'1234',0.0,'test1');
+\end{lstlisting}
+
+1 row(s) affected
+
+\begin{lstlisting}[language=sql]
+insert into supplier values (11,'test2','test2',102,'2345',0.1,'test2');
+\end{lstlisting}
+
+Error Code: 1062. Duplicate entry '11' for key 'PRIMARY'
+
+\subsection{实验总结}
+
+定义实体完整性实际上就是创建主键的过程。主键是唯一的，可以由一列组成，也可以由多列组合而成。当插入的行中主键与已有的行相同时，会拒绝其插入。主键还作为索引，提升查询的速度。
+
+\section{实验3.2 参照完整性实验}
+
+参照完整性，就是定义在外键与主键之间的引用规则。当一个表需要用到别的表的主键时，可以使用外键进行引用。
+
+\subsection{创建表时定义参照完整性}
+
+先定义地区表的实体完整性，再定义国家表上的参照完整性。
+
+\begin{lstlisting}[language=sql]
+create table region (
+	regionkey int primary key,
+    name char(25),
+    comment varchar(152)
+);
+
+create table nation (
+	nationkey int primary key,
+    name char(25),
+    regionkey int,
+    comment varchar(152),
+    foreign key (regionkey) references region(regionkey)
+);
+\end{lstlisting}
+
+\subsection{创建表后定义参照完整性}
+
+定义国家表的参照完整性。
+
+\begin{lstlisting}[language=sql]
+create table nation (
+	nationkey int primary key,
+    name char(25),
+    regionkey int references `region`(`regionkey`),
+    comment varchar(152)
+);
+
+alter table nation 
+add foreign key (regionkey) references region(regionkey);
+\end{lstlisting}
+
+\subsection{定义参照完整性的违约处理}
+
+定义国家表的参照完整性，当删除或修改被参照表记录时，设置参照表中相应记录的值为空值。
+
+\begin{lstlisting}[language=sql]
+create table nation (
+	nationkey int primary key,
+    name char(25),
+    regionkey int,
+    comment varchar(152),
+    foreign key (regionkey) references region(regionkey)
+		on delete set null on update set null
+);
+\end{lstlisting}
+
+\subsection{删除参照完整性}
+
+删除国家表的外码。
+
+先使用 show create table 查看外键名称。
+
+\begin{lstlisting}[language=sql]
+show create table nation;
+\end{lstlisting}
+
+\begin{lstlisting}
+CREATE TABLE `nation` (
+  `nationkey` int(11) NOT NULL,
+  `name` char(25) DEFAULT NULL,
+  `regionkey` int(11) DEFAULT NULL,
+  `comment` varchar(152) DEFAULT NULL,
+  PRIMARY KEY (`nationkey`),
+  KEY `regionkey` (`regionkey`),
+  CONSTRAINT `nation_ibfk_1` FOREIGN KEY (`regionkey`) REFERENCES `region` (`regionkey`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+\end{lstlisting}
+
+可以看到，外键名称是 nation\_ibfk\_1 。
+
+\begin{lstlisting}[language=sql]
+alter table nation drop foreign key nation_ibfk_1;
+\end{lstlisting}
+
+\subsection{插入一条国家记录，验证参照完整性是否起作用}
+
+\begin{lstlisting}[language=sql]
+insert into nation values (1001, 'nation1', 1001, 'comment1');
+\end{lstlisting}
+
+Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`lab2`.`nation`, CONSTRAINT `nation\_ibfk\_1` FOREIGN KEY (`regionkey`) REFERENCES `region` (`regionkey`))
+
+\subsection{实验总结}
+
+参照完整性是建立在别的表的实体完整性之上的。在插入数据时，会验证别的表上是否存在这个 primary key ，若存在才允许插入。删除实体完整性时，数据库会根据建表时定义的违约情况进行设置空值或级联删除的处理。
+
+\section{实验3.3 用户自定义完整性实验}
+
+\subsection{定义属性 NULL / NOT NULL 约束}
+
+定义地区表各属性的 NULL / NOT NULL 属性。
+
+\begin{lstlisting}[language=sql]
+create table region (
+	regionkey int not null primary key,
+    name char(25) not null,
+    comment varchar(152) null
+);
+\end{lstlisting}
+
+\subsection{定义属性 DEFAULT 约束}
+
+定义国家表的 regionkey 的缺省属性值为 0 值，表示其他地区。
+
+\begin{lstlisting}[language=sql]
+create table nation (
+	nationkey int primary key,
+    name char(25),
+    regionkey int default 0,
+    comment varchar(152),
+    foreign key (regionkey) references region(regionkey)
+);
+\end{lstlisting}
+
+\subsection{定义属性 UNIQUE 约束}
+
+定义国家表的名称属性必须唯一的完整性约束。
+
+\begin{lstlisting}[language=sql]
+create table nation (
+	nationkey int primary key,
+    name char(25) unique,
+    regionkey int default 0,
+    comment varchar(152)
+);
+\end{lstlisting}
+
+\subsection{使用 check}
+
+使用 check 定义 regionkey 所要满足的约束。
+
+\begin{lstlisting}[language=sql]
+create table region (
+	regionkey integer primary key,
+    name char(25) not null,
+    check (regionkey >= 100),
+    check (regionkey <= 200)
+);
+\end{lstlisting}
+
+\subsection{添加一条记录，验证是否违反 check 约束}
+
+\begin{lstlisting}[language=sql]
+insert into region values (99, '123');
+\end{lstlisting}
+
+1 row(s) affected
+
+结果是插入成功了。查阅资料知，\emph{MYSQL 不支持 check 约束，但可以使用 check 约束，而没有任何效果} 。所以插入数据时 check 约束没有起作用。
+
+\subsection{实验总结}
+
+通过实验，我知道了 NULL 约束允许空值，NOT NULL 约束禁止空值；DEFAULT 约束在未指定值时默认填入 DEFAULT 值；UNIQUE 约束保证属性必须唯一；CHECK 约束是某些属性必须满足的约束。而在 Mysql 中，check 约束未实现，其他约束都可以正常使用。
+
+\end{document}

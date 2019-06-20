@@ -1,0 +1,9 @@
+CREATE TABLE `nation` (
+  `nationkey` int(11) NOT NULL,
+  `name` char(25) DEFAULT NULL,
+  `regionkey` int(11) DEFAULT NULL,
+  `comment` varchar(152) DEFAULT NULL,
+  PRIMARY KEY (`nationkey`),
+  KEY `regionkey` (`regionkey`),
+  CONSTRAINT `nation_ibfk_1` FOREIGN KEY (`regionkey`) REFERENCES `region` (`regionkey`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

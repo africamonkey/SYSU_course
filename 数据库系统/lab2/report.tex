@@ -1,0 +1,226 @@
+% XeLaTeX
+
+\documentclass{article}
+\usepackage{ctex}
+\usepackage{xypic}
+\usepackage{amsfonts,amssymb}
+\usepackage{multirow}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{lipsum}
+\usepackage{courier}
+\usepackage{fancyvrb}
+\usepackage{etoolbox}
+
+
+\linespread{1.2}
+\geometry{left=3cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+
+\makeatletter
+\patchcmd{\FV@SetupFont}
+  {\FV@BaseLineStretch}
+  {\fontencoding{T1}\FV@BaseLineStretch}
+  {}{}
+\makeatother
+
+\lstset{basicstyle=\small\fontencoding{T1}\ttfamily,breaklines=true}
+\lstset{numbers=left,frame=shadowbox,tabsize=4}
+%\lstset{extendedchars=false}
+\begin{document}
+
+\title{数据库系统实验2 \ 实验报告}
+\author {数据科学与计算机学院 \ 计算机科学与技术 2016 级 \\ 王凯祺 \ 16337233}
+\maketitle
+
+\section{实验2.1 自主存取控制实验}
+
+\subsection{创建用户}
+
+创建用户 Amit, Satoshi 。
+
+\begin{lstlisting}[language=sql]
+create user 'Amit'@'%' with mysql_native_password identified by '123456';
+create user 'Satoshi'@'%' with mysql_native_password identified by '123456';
+\end{lstlisting}
+
+我曾尝试过使用
+
+\begin{lstlisting}[language=sql]
+insert into mysql.user (host, user, password) values ('%', 'Amit', password('123456'));
+\end{lstlisting}
+
+来添加用户，可是 mysql 总是在 password 处报错，提示 Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '('123456'))' at line 1 。我上网查找了这个错误，发现是由于 Mysql 8.0 删除了 password 函数，遂改用 create user 语句来添加用户。
+
+参考地址：https://dev.mysql.com/doc/refman/8.0/en/encryption-functions.html\#function\_password
+
+\subsection{创建角色并分配权限}
+
+\subsubsection{创建角色 instructor}
+
+\begin{lstlisting}[language=sql]
+create role instructor;
+\end{lstlisting}
+
+\subsubsection{为 instructor 角色分配权限}
+
+为 instructor 角色在 takes 表中授予 select 权限。
+
+\begin{lstlisting}[language=sql]
+grant select on lab.takes to instructor;
+\end{lstlisting}
+
+\subsubsection{将角色授予给用户/角色}
+
+将 dean 角色（未创建）授予给 Amit 。
+
+\begin{lstlisting}[language=sql]
+grant dean to Amit;
+\end{lstlisting}
+
+让我意外的是，居然成功授予了角色。原来它只是创建了一条角色边。
+
+\begin{lstlisting}[language=sql]
+select * from mysql.role_edges;
+\end{lstlisting}
+
+结果如下：
+
+\begin{lstlisting}
++-----------+-----------+---------+---------+-------------------+
+| FROM_HOST | FROM_USER | TO_HOST | TO_USER | WITH_ADMIN_OPTION |
++-----------+-----------+---------+---------+-------------------+
+| %         | dean      | %       | Amit    | N                 |
++-----------+-----------+---------+---------+-------------------+
+1 row in set (0.02 sec)
+\end{lstlisting}
+
+\subsubsection{创建角色 dean}
+
+\begin{lstlisting}[language=sql]
+create role dean;
+\end{lstlisting}
+
+\subsubsection{将 instructor 角色授予给 dean}
+
+\begin{lstlisting}[language=sql]
+grant instructor to dean;
+\end{lstlisting}
+
+\subsubsection{将 dean 角色授予给 Satoshi}
+
+\begin{lstlisting}[language=sql]
+grant dean to Satoshi;
+\end{lstlisting}
+
+\subsection{查看验证权限}
+
+\subsubsection{查看权限}
+
+使用 show grants 语句查看 Amit 的权限。
+
+\begin{lstlisting}[language=sql]
+show grants for 'Amit'@'%' using dean;
+\end{lstlisting}
+
+结果为：
+
+\begin{lstlisting}
++---------------------------------------------+
+| Grants for Amit@%                           |
++---------------------------------------------+
+| GRANT USAGE ON *.* TO `Amit`@`%`            |
+| GRANT SELECT ON `lab`.`takes` TO `Amit`@`%` |
+| GRANT `dean`@`%` TO `Amit`@`%`              |
++---------------------------------------------+
+3 rows in set (0.03 sec)
+\end{lstlisting}
+
+\subsubsection{验证授权}
+
+确认 Amit 拥有 lab.takes 的 select 授权后，尝试使用 Amit 用户登录数据库。
+
+使用 Amit 用户执行以下命令：
+
+\begin{lstlisting}[language=sql]
+select * from takes limit 5;
+\end{lstlisting}
+
+结果如下：
+
+\begin{lstlisting}
+ERROR 1142 (42000): SELECT command denied to user 'Amit'@'120.236.174.147' for table 'takes'
+\end{lstlisting}
+
+查阅资料后得知，用户登录后，没有激活角色，需要使用 set role 语句将活动角色设置为所有授予的角色。
+
+\begin{lstlisting}[language=sql]
+set role all;
+select * from takes limit 5;
+\end{lstlisting}
+
+结果如下：
+
+\begin{lstlisting}
+Query OK, 0 rows affected (0.02 sec)
+
++------+-----------+--------+----------+------+-------+
+| ID   | course_id | sec_id | semester | year | grade |
++------+-----------+--------+----------+------+-------+
+| 1000 | 239       | 1      | Fall     | 2006 | C     |
+| 1000 | 319       | 1      | Spring   | 2003 | B+    |
+| 1000 | 362       | 1      | Fall     | 2005 | B+    |
+| 1000 | 493       | 1      | Spring   | 2010 | A-    |
+| 1000 | 571       | 1      | Spring   | 2004 | C+    |
++------+-----------+--------+----------+------+-------+
+5 rows in set (0.02 sec)
+\end{lstlisting}
+
+\subsubsection{收回授权}
+
+用 root 用户执行收回 instructor 对 dean 的授权。
+
+\begin{lstlisting}[language=sql]
+revoke instructor from dean;
+\end{lstlisting}
+
+用 Amit 用户登录，并使用 show grants 语句查看 Amit 的权限。
+
+\begin{lstlisting}[language=sql]
+show grants for 'Amit'@'%' using dean;
+\end{lstlisting}
+
+结果为：
+
+\begin{lstlisting}
++----------------------------------+
+| Grants for Amit@%                |
++----------------------------------+
+| GRANT USAGE ON *.* TO `Amit`@`%` |
+| GRANT `dean`@`%` TO `Amit`@`%`   |
++----------------------------------+
+2 rows in set (0.01 sec)
+\end{lstlisting}
+
+我们可以看到，在 lab.takes 的 select 权限已被收回。
+
+用下面的语句测试一下是否能执行 select 操作：
+
+\begin{lstlisting}[language=sql]
+set role all;
+select * from takes limit 5;
+\end{lstlisting}
+
+结果如下：
+
+\begin{lstlisting}
+ERROR 1142 (42000): SELECT command denied to user 'Amit'@'120.236.174.147' for table 'takes'
+\end{lstlisting}
+
+\subsection{实验总结}
+
+我明白了如何创建用户、如何授权和收回。在此过程中，我碰到了很多问题，如无法创建用户、授权后无法使用权利的问题，我均从网上搜索到原因以及解决方案，并解决了这些问题。
+
+通过查看 mysql.user 和 mysql.role\_edges 表，我明白了授权关系是如何存储的（被授权人、授权人），也明白了为什么在未创建角色的情况下可以将角色授权给他人（只添加授权关系，不添加角色）。
+
+\end{document}

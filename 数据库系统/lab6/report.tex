@@ -1,0 +1,209 @@
+% XeLaTeX
+
+\documentclass{article}
+\usepackage{ctex}
+\usepackage{xypic}
+\usepackage{amsfonts,amssymb}
+\usepackage{multirow}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{lipsum}
+\usepackage{courier}
+\usepackage{fancyvrb}
+\usepackage{etoolbox}
+
+
+\linespread{1.2}
+\geometry{left=3cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+
+\makeatletter
+\patchcmd{\FV@SetupFont}
+  {\FV@BaseLineStretch}
+  {\fontencoding{T1}\FV@BaseLineStretch}
+  {}{}
+\makeatother
+
+\lstset{basicstyle=\small\fontencoding{T1}\ttfamily,breaklines=true}
+\lstset{numbers=left,frame=shadowbox,tabsize=4}
+%\lstset{extendedchars=false}
+\begin{document}
+
+\title{数据库系统实验6 \ 实验报告}
+\author {数据科学与计算机学院 \ 计算机科学与技术 2016 级 \\ 王凯祺 \ 16337233}
+\maketitle
+
+\section{实验6 存储过程实验}
+
+\subsection{无参数的存储过程}
+
+定义一个存储过程，根据选课记录更新\emph{所有学生}的绩点。
+
+\begin{lstlisting}[language=sql]
+delimiter //
+create procedure Proc_CalCred()
+begin
+	set SQL_SAFE_UPDATES = 0;
+	update student
+    set tot_cred = (
+		select sum(credits)
+        from takes natural join course
+        where (takes.grade is not null) and takes.grade <> 'F' and student.ID = takes.ID
+    );
+    set SQL_SAFE_UPDATES = 1;
+end //
+delimiter ;
+\end{lstlisting}
+
+执行存储过程 Proc\_CalCred 。
+
+\begin{lstlisting}[language=sql]
+CALL `lab`.`Proc_CalCred`();
+\end{lstlisting}
+
+\subsection{有参数的存储过程}
+
+定义一个存储过程，根据选课记录更新\emph{指定学生（学号）}的绩点。
+
+\begin{lstlisting}[language=sql]
+delimiter //
+create procedure Proc_CalCred4Student(stu varchar(5))
+begin
+	update student
+    set tot_cred = (
+		select sum(credits)
+        from takes natural join course
+        where (takes.grade is not null) and takes.grade <> 'F' and student.ID = takes.ID
+    )
+    where student.ID = stu;
+end //
+delimiter ;
+\end{lstlisting}
+
+执行存储过程。
+
+\begin{lstlisting}[language=sql]
+CALL `lab`.`Proc_CalCred4Student`('1000');
+\end{lstlisting}
+
+\subsection{有局部变量的存储过程}
+
+定义一个存储过程，根据选课记录更新\emph{指定学生（姓名）}的绩点。
+
+\begin{lstlisting}[language=sql]
+delimiter //
+create procedure Proc_CalCred4Student_2(stu_name varchar(20))
+begin
+	declare idkey varchar(5);
+    select ID into idkey
+    from student
+    where name = TRIM(stu_name);
+	update student
+    set tot_cred = (
+		select sum(credits)
+        from takes natural join course
+        where (takes.grade is not null) and takes.grade <> 'F' and student.ID = takes.ID
+    )
+    where student.ID = idkey;
+end //
+delimiter ;
+\end{lstlisitng}
+
+执行存储过程。
+
+\begin{lstlisting}[language=sql]
+CALL `lab`.`Proc_CalCred4Student_2`('Manber');
+\end{lstlisting}
+
+查看存储过程执行结果。
+
+\begin{lstlisting}[language=sql]
+select tot_cred from student where name = 'Manber';
+\end{lstlisting}
+
+\subsection{有输出参数的存储过程}
+
+定义一个存储过程，根据选课记录更新\emph{指定学生（姓名）}的绩点。
+
+\begin{lstlisting}[language=sql]
+delimiter //
+create procedure Proc_CalCred4Student_3(stu_name varchar(20), out cred decimal(3,0))
+begin
+	declare idkey varchar(5);
+    select ID into idkey
+    from student
+    where name = TRIM(stu_name);
+	update student
+    set tot_cred = (
+		select sum(credits)
+        from takes natural join course
+        where (takes.grade is not null) and takes.grade <> 'F' and student.ID = takes.ID
+    )
+    where student.ID = idkey;
+    select tot_cred into cred
+    from student
+    where ID = idkey;
+end //
+delimiter ;
+\end{lstlisting}
+
+执行存储过程。
+
+\begin{lstlisting}[language=sql]
+CALL `lab`.`Proc_CalCred4Student_3`('Manber', @a);
+select @a;
+\end{lstlisting}
+
+结果如下：
+
+\begin{lstlisting}
++------+
+| @a   |
++------+
+|   42 |
++------+
+1 row in set (0.01 sec)
+\end{lstlisting}
+
+检查下列 SQL 语句执行结果与上述结果是否一致。
+
+\begin{lstlisting}[language=sql]
+select sum(credits)
+from takes natural join course natural join (select ID, name from student) as stu
+where (takes.grade is not null) and takes.grade <> 'F' and stu.ID = takes.ID and stu.name = 'Manber';
+\end{lstlisting}
+
+结果如下：
+
+\begin{lstlisting}
++--------------+
+| sum(credits) |
++--------------+
+|           42 |
++--------------+
+1 row in set (0.01 sec)
+\end{lstlisting}
+
+\subsection{删除存储过程}
+
+\begin{lstlisting}[language=sql]
+drop procedure `Proc_CalCred4Student_3`;
+\end{lstlisting}
+
+执行存储过程。
+
+\begin{lstlisting}[language=sql]
+CALL `lab`.`Proc_CalCred4Student_3`('Manber');
+\end{lstlisting}
+
+执行结果
+
+\begin{lstlisting}
+ERROR 1305 (42000): PROCEDURE lab.Proc_CalCred4Student_3 does not exist
+\end{lstlisting}
+
+\subsection{实验总结}
+
+存储过程实际上是将重复性很高的一些操作，封装到一个存储过程中，从而简化了 SQL 的调用。对于大量的查询操作，可以减少 SQL 语句的传输，从而减少流量。存储过程的接口都是统一的，并且不会暴露数据库的结构，能确保数据的安全。
+
+\end{document}
