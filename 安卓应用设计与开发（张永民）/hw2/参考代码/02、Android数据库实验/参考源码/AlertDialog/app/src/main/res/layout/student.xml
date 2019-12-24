@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			 android:id="@+id/studentForm"
+			 android:layout_width="match_parent"
+			 android:layout_height="match_parent"
+	android:padding="12dp">
+	<TableRow>
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="学号:"
+			android:textSize="20dp"/>
+		<EditText
+			android:id="@+id/stu_num"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:hint="请填写学号"
+			android:textSize="20dp"
+			android:selectAllOnFocus="true"/>
+	</TableRow>
+	<TableRow>
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="姓名:"
+			android:textSize="20dp"/>
+		<EditText
+			android:id="@+id/stu_name"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textSize="20dp"
+			android:hint="请填写姓名"/>
+	</TableRow>
+	<TableRow>
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="手机号码:"
+			android:textSize="20dp"/>
+		<EditText
+			android:id="@+id/phone_num"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:hint="请填写手机号码"
+			android:textSize="20dp"
+			android:inputType="phone"
+			android:selectAllOnFocus="true" />
+	</TableRow>
+</TableLayout>
+

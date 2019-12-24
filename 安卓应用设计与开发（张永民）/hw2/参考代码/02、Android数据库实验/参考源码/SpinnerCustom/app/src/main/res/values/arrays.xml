@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="city">
+            <item>广州</item>
+            <item>上海</item>
+            <item>北京</item>
+            <item>深圳</item>
+            <item>天津</item>         
+            <item>重庆</item>         
+     </string-array>
+    <string-array name="country">
+            <item>黄浦区</item>
+            <item>徐汇区</item>
+            <item>浦东新区</item>
+            <item>宝山区</item>
+            <item>长宁区</item>
+     </string-array>  
+</resources>

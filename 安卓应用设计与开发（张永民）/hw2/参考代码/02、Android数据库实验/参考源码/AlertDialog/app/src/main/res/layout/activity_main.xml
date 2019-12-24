@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.isszym.alertdialog.MainActivity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+        <!-- 显示一个普通的文本编辑框组件 -->
+        <EditText
+            android:id="@+id/show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:editable="false"/>
+        <!-- 定义一个普通的按钮组件 -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="简单对话框"
+            android:onClick="simple"
+            />
+        <!-- 定义一个普通的按钮组件 -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="简单列表项对话框"
+            android:onClick="simpleList"
+            />
+        <!-- 定义一个普通的按钮组件 -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="单选列表项对话框"
+            android:onClick="singleChoice"
+            />
+        <!-- 定义一个普通的按钮组件 -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="多选列表项对话框"
+            android:onClick="multiChoice"
+            />
+        <!-- 定义一个普通的按钮组件 -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="自定义列表项对话框"
+            android:onClick="customList"
+            />
+        <!-- 定义一个普通的按钮组件 -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="自定义View对话框"
+            android:onClick="customView"
+            />
+    </LinearLayout>
+</RelativeLayout>

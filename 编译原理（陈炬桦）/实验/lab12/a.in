@@ -1,0 +1,27 @@
+A
+4  E T F A
+6  a +  * ( ) #
+7
+0  A E
+1  E E+T
+2  E T
+3  T T*F
+4  T F
+5  F (E)
+6  F a
+
+12 6 3
+0  s 5  k 0  k 0  s 4  k 0  k 0  1 2 3
+1  k 0  s 6  k 0  k 0  k 0  A 0  0 0 0
+2  k 0  r 2  s 7  k 0  r 2  r 2  0 0 0
+3  k 0  r 4  r 4  k 0  r 4  r 4  0 0 0
+4  s 5  k 0  k 0  s 4  k 0  k 0  8 2 3
+5  k 0  r 6  r 6  k 0  r 6  r 6  0 0 0
+6  s 5  k 0  k 0  s 4  k 0  k 0  0 9 3
+7  s 5  k 0  k 0  s 4  k 0  k 0  0 0 10
+8  k 0  s 6  k 0  k 0  s 11 k 0  0 0 0
+9  k 0  r 1  s 7  k 0  r 1  r 1  0 0 0
+10 k 0  r 3  r 3  k 0  r 3  r 3  0 0 0
+11 k 0  r 5  r 5  k 0  r 5  r 5  0 0 0
+
+(a+a)*a#

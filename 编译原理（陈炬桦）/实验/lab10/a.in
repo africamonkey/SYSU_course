@@ -1,0 +1,17 @@
+E
+6  E A T F B D
+9 + -  * / ( ) x y z 
+13
+1  E E+T
+2  E E-T
+3  E A
+4  A T
+5  T F*T
+6  T F/T
+7  T F
+8  F (B)
+9  F D
+10 B E
+11 D x
+12 D y
+13 D z

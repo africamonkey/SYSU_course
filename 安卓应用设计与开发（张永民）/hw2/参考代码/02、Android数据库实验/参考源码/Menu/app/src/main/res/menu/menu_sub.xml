@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/submenu" android:title="子菜单使用演示~">
+        <menu>
+            <group android:checkableBehavior = "none">
+                <item android:id="@+id/one" android:title = "子菜单一"/>
+                <item android:id="@+id/two" android:title = "子菜单二"/>
+                <item android:id="@+id/three" android:title = "子菜单三"/>
+            </group>
+        </menu>
+    </item>
+</menu>

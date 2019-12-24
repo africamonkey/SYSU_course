@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    >
+    <!-- Defines a "theme" that will apply to the entire application,
+         or at least a handful of its activities -->
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <!-- Provide decor theme colors -->
+        <item name="colorPrimary">@color/primaryGreen</item>
+        <item name="colorPrimaryDark">@color/darkGreen</item>
+        <item name="colorAccent">@color/accentGreen</item>
+
+    </style>
+    <!-- The toolbar will replace the standard action bar, so we
+         need a theme that removes the action bar from the window decor -->
+    <style name="AppToolbarTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <!-- Provide decor theme colors -->
+        <item name="colorPrimary">@color/primaryGreen</item>
+        <item name="colorPrimaryDark">@color/darkGreen</item>
+        <item name="colorAccent">@color/accentGreen</item>
+
+    </style>
+</resources>

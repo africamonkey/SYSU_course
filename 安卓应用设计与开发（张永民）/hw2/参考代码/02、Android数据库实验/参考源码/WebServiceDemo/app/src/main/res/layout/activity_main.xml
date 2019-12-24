@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/edit_param"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:hint="请输入查询的相关参数" />
+
+    <Button
+        android:id="@+id/btn_query_xml_weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查询城市天气(XML)" />
+
+    <Button
+        android:id="@+id/btn_query_json_weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查询城市天气(Json)" />
+
+    <Button
+        android:id="@+id/btn_query_soap_weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查询城市天气(Soap)" />
+
+    <Button
+        android:id="@+id/btn_post_web_server"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="提交数据给Web服务器" />
+
+    <Button
+        android:id="@+id/btn_protobuf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="获得ProtoBuf数据" />
+
+    <TextView
+        android:id="@+id/txt_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:text="结果显示："
+        android:textSize="16sp" />
+
+</LinearLayout>
