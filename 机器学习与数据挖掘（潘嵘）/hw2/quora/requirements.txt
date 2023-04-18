@@ -11,7 +11,7 @@ jmespath==0.9.4
 joblib==0.13.2
 kiwisolver==1.1.0
 matplotlib==3.1.0
-nltk==3.4.1
+nltk==3.6.6
 numpy==1.22.0
 pandas==0.24.2
 pyparsing==2.4.0
